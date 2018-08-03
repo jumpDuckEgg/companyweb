@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<title>唯星集团</title>
+	<meta name="keywords" content="唯星集团">
+	<meta name="description" content="唯星集团">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<link rel="shortcut icon" href="favicon.ico">
+
+	<!-- include main css -->
+	<link rel="stylesheet" type="text/css" href="css/slick.css" />
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="css/jquery.mmenu.all.css" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<link rel="stylesheet" href="css/animates.css" />
+	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=6d88e38ab7f507ee19cec46443691d95"></script>
+
+	<!--[if lt IE 9]>
+    <script src="http://apps.bdimg.com/libs/html5shiv/r29/html5.min.js"></script>
+    <script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+	<div>
+		<!--header-->
+		<header class="header">
+			<section class="container">
+				<a href="#mmenu" class="phone-nav glyphicon glyphicon-list"></a>
+			</section>
+			<div class="logo">
+				<div class="container clearfix">
+					<a href="index.html" class="pull-left logoa">
+						<img src="images/logo.png" alt="" class="logoImg" />
+					</a>
+					<div class="search pull-right">
+						<img class="searbtn" src="images/sear.png" alt="" />
+						<div class="seardown slideDown">
+							<input class="searinput" type="text" />
+							<input class="searsub" type="submit" value="" />
+							<img class="searclosed" src="images/icon-closed.png" alt="" />
+						</div>
+
+					</div>
+				</div>
+			</div>
+			<nav class="nav">
+				<ul class="container clearfix">
+					<li>
+						<a href="index.html">首页</a>
+					</li>
+					<li>
+						<a href="about.html">关于我们</a>
+					</li>
+					<li class="productionMenu">
+						<a href="pro.html">产品中心</a>
+					</li>
+					<li class="active">
+						<a href="contact.html">联系我们</a>
+						<ul>
+							<li>
+								<a href="contact.html">联系方式</a>
+							</li>
+							<li>
+								<a href="contact.html#message">在线留言</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+		</header>
+
+		<!--banner-->
+		<section class="banner">
+			<img src="images/contactbanner.jpg" alt="" class="bannerImg" />
+		</section>
+
+		<!--内页面包屑-->
+		<div class="mbx">
+			<div class="container">
+				您当前的位置：
+				<a href="index.html">首页</a> >
+				<span>联系我们</span>
+			</div>
+		</div>
+		<div class="ny">
+
+			<div class="contact">
+				<div class="contacttit">
+					<span>联系我们</span>
+				</div>
+				<div class="container">
+					<div class="contacttxt">
+
+					</div>
+					<ul class="contact_us clearfix">
+						<li class="companyTelphone">
+							<b>电话</b>
+						</li>
+						<li class="companyEmail">
+							<b>邮箱</b>
+						</li>
+						<li class="companyAddress">
+							<b>地址</b>
+						</li>
+						<li class="companyMobile">
+							<b>手机</b>
+						</li>
+						<li class="companyPostCode">
+							<b>邮编</b>
+						</li>
+					</ul>
+
+					<div id="map"></div>
+
+
+					<!--在线留言-->
+					<div class="message" id="message">
+						<label>
+							<span>姓名</span>
+							<input type="text" class="name" />
+							<em>*</em>
+						</label>
+						<label>
+							<span>电话</span>
+							<input type="text" class="phone" />
+							<em>*</em>
+						</label>
+						<label>
+							<span>地址</span>
+							<input type="text" class="address" />
+						</label>
+						<label>
+							<span>邮箱</span>
+							<input type="text" class="email" />
+							<em>*</em>
+						</label>
+						<label class="messagecon">
+							<span>留言内容</span>
+							<textarea class="content"></textarea>
+							<em>*</em>
+						</label>
+						<!-- <label class="code">
+							<span>验证码</span>
+							<input type="text" />
+							<img src="images/code.jpg" alt="" />
+							<a href="#">看不清，换一张</a>
+							<em>*</em>
+						</label> -->
+
+						<label class="sub">
+							<input type="submit" value="提交" class="submitBtn" />
+						</label>
+						<label class="reset">
+							<input type="reset" value="重置" class="resetBtn" />
+						</label>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+
+
+
+
+
+		<!--底部开始-->
+		<div class="footer-logo">
+			<div class="container">
+				<a href="index.html">
+					<img src="images/logo.png" alt="" />
+				</a>
+				<span>电话：
+					<b class="telphone">
+						<!-- 电话 -->
+					</b>
+				</span>
+			</div>
+		</div>
+
+		<!--底部导航-->
+		<div class="footernav">
+			<div class="container">
+				<dl>
+					<dt>
+						<a href="index.html">首页</a>
+					</dt>
+					<dd>
+						<a href="about.html">关于我们</a>
+					</dd>
+				</dl>
+				<dl class="productionFooter">
+					<dt>
+						<a href="pro.html">产品中心</a>
+					</dt>
+
+				</dl>
+
+				<dl>
+					<dt>
+						<a href="contact.html">联系我们</a>
+					</dt>
+					<dd>
+						<a href="contact.html">联系方式</a>
+					</dd>
+					<dd>
+						<a href="contact.html#message">在线留言</a>
+					</dd>
+				</dl>
+			</div>
+		</div>
+
+
+		<!--底部版权-->
+		<div class="copy">
+			<div class="container">
+				Copyright(c)2018
+				<span class="conpanyName"></span>
+				<div class="link">
+					友情链接
+					<div class="lindown">
+						<!-- <a target="_blank" title="唯星" href="http://www.baidu.com/">百度</a> -->
+						<a target="_blank" title="百度一下，你就知道 " href="http://www.baidu.com/">百度</a>
+					</div>
+				</div>
+				<img src="images/yu.png" alt="" />
+				<div class="ferweima">
+					<img src="images/fewm.jpg" alt="" />
+					<div class="ewmwrap pic slideDown">
+						<img class="vcenter" src="images/erweima.jpg" alt="" />
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--移动端  Mmenu-->
+		<nav id="mmenu">
+			<ul>
+				<li>
+					<a href="#">EN</a>
+				</li>
+				<li>
+					<a href="index.html">首 页</a>
+				</li>
+				<li>
+					<a href="about.html">关于我们</a>
+				</li>
+				<li class="productionMenu">
+					<a href="pro.html">产品中心</a>
+				</li>
+				<li>
+					<a href="contact.html">联系我们</a>
+					<ul>
+						<li>
+							<a href="contact.html">联系方式</a>
+						</li>
+						<li>
+							<a href="contact.html#message">在线留言</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+
+	</div>
+
+
+
+
+	<!--Include Js-->
+	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var SERVERIMGURL = 'http://182.61.47.252:9856/gc/page/file/get?id=';
+		var MESSAGEURL = 'http://182.61.47.252:9856/gc/page/message_info/create'
+		var conpanyInfo = '';
+		$(function () {
+
+			$.get('http://182.61.47.252:9856/gc/page/conpany_info/findIndex?sliderSize=3&dicInfoItemInfoSize=100', function (res) {
+				if (res.success) {
+					var about = res.result.about;
+					var itemInfoList = res.result.ItemInfoList;
+					var sliders = res.result.sliders;
+					conpanyInfo = res.result.conpanyInfo;
+					var pictures = res.result.pictures;
+
+					// 关于我们
+					$('.inabcon').html(about.description);
+					// 电话
+					$('.telphone').text(conpanyInfo.contactPhone);
+					// 公司名字
+					$('.conpanyName').text(conpanyInfo.name);
+					// logo
+					$('.logoImg').attr('src', SERVERIMGURL + conpanyInfo.logo);
+					// 专题图片
+					$('.bannerImg').attr('src', SERVERIMGURL + conpanyInfo.pictureId);
+					// 联系我们的内容
+					$('.contacttxt').html(conpanyInfo.description);
+					// 联系我们电话
+					$('.companyTelphone').append('<a  href="tel:' + conpanyInfo.contactPhone + '">' + conpanyInfo.contactPhone + '</a>');
+					// 邮箱
+					$('.companyEmail').append('<a  href="mailto:' + conpanyInfo.contactEmail + '">' + conpanyInfo.contactEmail + '</a>');
+					// 地址
+					$('.companyAddress').append(conpanyInfo.address);
+					// 手机
+					$('.companyMobile').append('<a  href="tel:' + conpanyInfo.contactMobilePhone + '">' + conpanyInfo.contactMobilePhone + '</a>');
+					//邮编
+					$('.companyPostCode').append(conpanyInfo.postCode);
+					// 产品类型
+					for (var index = 0; index < itemInfoList.length; index++) {
+						if (itemInfoList[index].name == '产品中心') {
+							var productionChildren = itemInfoList[index].children;
+							// 移动端菜单
+							var ulData = '<ul>';
+							var dtData = '';
+							for (var j = 0; j < productionChildren.length; j++) {
+								ulData += '<li>' +
+									'<a href="pro.html?parentId=' + productionChildren[j].parentId + '&id=' + productionChildren[j].id + '">' + productionChildren[j].name + '</a>' +
+									'</li>';
+								dtData += '<dd>' +
+									'<a href="pro.html?parentId=' + productionChildren[j].parentId + '&id=' + productionChildren[j].id + '">' + productionChildren[j].name + '</a>' +
+									'</dd>';
+							};
+							ulData += '</ul>';
+							$('.productionMenu').append(ulData);
+							$('nav#mmenu').mmenu({
+								extensions: ['effect-slide-menu', 'pageshadow'],
+								counters: false,
+								navbar: {
+									title: '菜单',
+								},
+								navbars: [
+									{
+										position: 'top',
+										content: [
+											'prev',
+											'title',
+											'close'
+										]
+									}, {
+										position: 'bottom',
+										content: [
+											''
+										]
+									}
+								]
+							});
+							$('.productionFooter').append(dtData)
+						}
+					}
+					// 提交模块
+					$('.submitBtn').click(function () {
+						var name = $('.name').val().trim();
+						var phone = $('.phone').val().trim();
+						var address = $('.address').val().trim();
+						var email = $('.email').val().trim();
+						var content = $('.content').val().trim();
+						if (!name) {
+							alert("请输入姓名");
+							return false;
+						}
+						if (!phone) {
+							alert("请输入电话");
+							return false;
+						}
+						if (!address) {
+							alert("请输入地址");
+							return false;
+						}
+						if (!content) {
+							alert("请输入留言内容");
+							return false;
+						}
+
+						$.ajax({
+							type: 'post',
+							url: MESSAGEURL,
+							contentType: 'application/json',
+							data: JSON.stringify({
+								contactor: name,
+								contactPhone: phone,
+								contactEmail: email,
+								address: address,
+								message: content
+							}),
+							success: function (res) {
+								if (res.success) {
+									window.location = 'fk.html';
+								}
+							}
+						})
+					});
+					$('.resetBtn').click(function () {
+						$('.name').val('');
+						$('.phone').val('');
+						$('.address').val('');
+						$('.email').val('');
+						$('.content').val('');
+					})
+
+
+					// 百度地图API功能
+					var map = new BMap.Map("map");    // 创建Map实例
+					var point = new BMap.Point(conpanyInfo.longitude, conpanyInfo.latitude);   //坐标拾取网址：http://api.map.baidu.com/lbsapi/getpoint/index.html
+
+					var marker = new BMap.Marker(point);  // 创建标注
+
+
+
+					var top_left_control = new BMap.ScaleControl({ anchor: BMAP_ANCHOR_TOP_LEFT });// 左上角，添加比例尺
+					var top_left_navigation = new BMap.NavigationControl();  //左上角，添加默认缩放平移控件
+
+					marker.setAnimation(BMAP_ANIMATION_BOUNCE); //跳动的动画
+					map.centerAndZoom(point, 18);  // 初始化地图,设置中心点坐标和地图级别
+					map.addOverlay(marker);               // 将标注添加到地图中
+					map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+					map.addControl(new BMap.MapTypeControl());   //添加地图类型控件
+					map.setCurrentCity("广州");          // 设置地图显示的城市 此项是必须设置的
+
+
+
+					window.onresize = function () {
+
+						map.centerAndZoom(point, 15);  // 重置窗口的时候 重新获取中心点坐标的位置
+
+					}
+
+					/*
+					 * 若要开启全景模式，解注
+					 */
+
+					/*var stCtrl = new BMap.PanoramaControl(); //构造全景控件
+					map.addTileLayer(new BMap.PanoramaCoverageLayer());
+					stCtrl.setOffset(new BMap.Size(20, 20));
+					map.addControl(stCtrl);//添加全景控件*/
+
+
+
+
+					//添加缩放控件
+					map.addControl(top_left_control);
+					map.addControl(top_left_navigation);
+					/*map.addControl(top_right_navigation);  */
+
+
+				} else {
+					alert("获取失败");
+				}
+			})
+		});
+	</script>
+	<!--移动端导航-->
+	<script src="js/jquery.mmenu.all.min.js" type="text/javascript" charset="utf-8"></script>
+
+	<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+
+	<!--slick-->
+	<script src="js/slick.min.js" type="text/javascript" charset="utf-8"></script>
+
+	<!--placeholder-->
+	<script src="js/jquery.placeholder.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function () { $('input, textarea').placeholder(); });
+	</script>
+	<script type="text/javascript">
+
+
+
+
+	</script>
+</body>
+
+</html>
