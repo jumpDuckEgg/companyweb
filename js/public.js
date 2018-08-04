@@ -15,31 +15,6 @@ $(function(){
 
 $(".nav ul li:last").css({"border-right":"1px solid #d1d3d5"})
 
-$(function(){
-	$(".inpcon .container").slick({
-		dots: false,
-        autoplay:true,
-        slidesToShow:4,
-        slidesToScroll:4,
-        arrows:true,
-        autoplaySpeed:3000,
-        responsive: [
-					    {
-					        breakpoint: 768,
-					        settings: {
-					            slidesToShow: 3,
-					        }
-					    },
-					    {
-					        breakpoint: 480,
-					        settings: {
-					            slidesToShow: 2,
-					        }
-					    }
-					    
-                ]
-	})
-})
 
 $(".innewcon ul li:nth-child(3n)").css({"margin-right":"0"})
 $(".footernav dl:last").css({"border-right":"1px solid #dfdfdf"})

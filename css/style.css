@@ -666,8 +666,8 @@ img {
 .pro ul li {
   list-style: none;
   float: left;
-  width: 16.24%;
-  margin: 0 11.68% 5% 0;
+  width: 20%;
+  margin: 0 2.5% 5% 2.5%;
 }
 .pro ul li .pic img {
   transition: 0.5s;
@@ -907,7 +907,7 @@ img {
   padding: 0 20px;
 }
 .xgcp ul li {
-  margin-right: 11.68%;
+  /* margin-right: 11.68%; */
 }
 .contacttit {
   text-align: center;
@@ -1722,5 +1722,13 @@ img {
 }
 .productionType{
   cursor: pointer;
+}
+.productionImg{
+  width: 241px;
+  height: 132px;
+}
+.itemImg{
+  width: 156px;
+  height: 85px;
 }
 /*# sourceMappingURL=style.css.map */

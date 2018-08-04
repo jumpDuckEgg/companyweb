@@ -80,27 +80,30 @@
 		</section>
 
 
-
-		<!--产品中心-->
-		<div class="inpro">
-			<div class="inptit">
-				<span>
-					<em>产品中心</em>
-				</span>
-			</div>
-			<div class="inpcon clearfix">
-				<div class="container">
-					<div class="col-md-3">
-						<div class="pic">
-							<a href="pro_show.html">
-								<img class="vcenter" src="images/inp1.jpg" alt="" />
-							</a>
+		<div class="itemList">
+			<!--产品中心-->
+			<!-- <div class="inpro">
+				<div class="inptit">
+					<span>
+						<em>产品中心</em>
+					</span>
+				</div>
+				<div class="inpcon clearfix">
+					<div class="container">
+						<div class="col-md-3">
+							<div class="pic">
+								<a href="pro_show.html">
+									<img class="vcenter" src="images/inp1.jpg" alt="" />
+								</a>
+							</div>
+							<a class="inpca" href="pro_show.html">宾馆酒店铺地材料</a>
 						</div>
-						<a class="inpca" href="pro_show.html">宾馆酒店铺地材料</a>
 					</div>
 				</div>
-			</div>
+			</div> -->
+
 		</div>
+
 
 
 
@@ -123,7 +126,7 @@
 		<div class="footer-logo">
 			<div class="container">
 				<a href="index.html">
-					<img src="images/logo.png" alt="" />
+					<img src="images/logo.png" alt="" class="logoImg"/>
 				</a>
 				<span>电话：
 					<b class="telphone">
@@ -227,7 +230,8 @@
 	<!--slick-->
 	<script src="js/slick.min.js" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript">
-		var SERVERIMGURL = 'http://182.61.47.252:9856/gc/page/file/get?id='
+		var SERVERIMGURL = 'http://182.61.47.252:9856/gc/page/file/get?id=';
+		var PRODUCTIONINFO = 'pro_show.html';
 		$(function () {
 
 			$.get('http://182.61.47.252:9856/gc/page/conpany_info/findIndex?sliderSize=3&dicInfoItemInfoSize=100', function (res) {
@@ -265,6 +269,7 @@
 					});
 					// 产品类型
 					for (var index = 0; index < itemInfoList.length; index++) {
+						// 产品中心
 						if (itemInfoList[index].name == '产品中心') {
 							var productionChildren = itemInfoList[index].children;
 							// 移动端菜单
@@ -302,9 +307,74 @@
 									}
 								]
 							});
-							$('.productionFooter').append(dtData)
+							$('.productionFooter').append(dtData);
+
+
+							var itemData = itemInfoList[index];
+							var templateData = '';
+							templateData += '<div class="inpro">' + '<div class="inptit">' + '<span><em>' + itemData.name + '</em></span></div>' +
+								'<div class="inpcon clearfix">' +
+								'<div class="container">';
+							for (var pictureIndex = 0; pictureIndex < itemData.pictureList.length; pictureIndex++) {
+								templateData += '<div class="col-md-3">' +
+									'<div class="pic">' +
+									'<a href="' + (PRODUCTIONINFO + '?type=' + itemData.pictureList[pictureIndex].type + '&subType=' + itemData.pictureList[pictureIndex].subType+ '&id=' + itemData.pictureList[pictureIndex].id) + '">' +
+									'<img class="vcenter productionImg" src="' + (SERVERIMGURL + itemData.pictureList[pictureIndex].picturePath) + '" alt="" />' +
+									'</a>' +
+									'</div>' +
+									'<a class="inpca" href="pro_show.html">' + itemData.pictureList[pictureIndex].title + '</a>' +
+									'</div>';
+							}
+							templateData += '</div></div></div>';
+							$('.itemList').append(templateData);
+
+
+							// 不是产品中心
+						} else {
+							var itemData = itemInfoList[index];
+							var templateData = '';
+							templateData += '<div class="inpro">' + '<div class="inptit">' + '<span><em>' + itemData.name + '</em></span></div>' +
+								'<div class="inpcon clearfix">' +
+								'<div class="container">';
+							for (var pictureIndex = 0; pictureIndex < itemData.pictureList.length; pictureIndex++) {
+								templateData += '<div class="col-md-3">' +
+									'<div class="pic">' +
+									'<a href="javascript:void(0)">' +
+									'<img class="vcenter productionImg" src="' + (SERVERIMGURL + itemData.pictureList[pictureIndex].picturePath) + '" alt="" />' +
+									'</a>' +
+									'</div>' +
+									'<a class="inpca" href="pro_show.html">' + itemData.pictureList[pictureIndex].title + '</a>' +
+									'</div>';
+							}
+							templateData += '</div></div></div>';
+							$('.itemList').append(templateData);
 						}
-					}
+
+					};
+					// 初始化产品滚动条
+					$(".inpcon .container").slick({
+						dots: false,
+						autoplay: true,
+						slidesToShow: 4,
+						slidesToScroll: 4,
+						arrows: true,
+						autoplaySpeed: 3000,
+						responsive: [
+							{
+								breakpoint: 768,
+								settings: {
+									slidesToShow: 3,
+								}
+							},
+							{
+								breakpoint: 480,
+								settings: {
+									slidesToShow: 2,
+								}
+							}
+
+						]
+					})
 
 
 				} else {
