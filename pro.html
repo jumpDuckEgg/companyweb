@@ -221,6 +221,7 @@
 	<!-- 分页 -->
 	<script src="js/pagination.js" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript">
+		$('.loadingBox').show();
 		var SERVERIMGURL = 'http://182.61.47.252:9856/gc/page/file/get?id=';
 		var PRODUCTIONLIST = 'http://182.61.47.252:9856/gc/page/item_info/findPage?';
 		var pageIndex = 1;
@@ -378,7 +379,7 @@
 						// window.location.href = 'pro.html?parentId='+type+'&id='+subType;
 						getProductionInfo();
 					});
-
+					$('.loadingBox').hide();
 				} else {
 					alert("获取失败");
 				}
@@ -404,7 +405,7 @@
 									'</a>' +
 									'</div>' +
 									'<a href="pro_show.html?type=' + data[itemIndex].type + '&subType=' + data[itemIndex].subType + '&id=' + data[itemIndex].id + '" class="protita">' +
-											data[itemIndex].title +
+									data[itemIndex].title +
 									'</a>' +
 									'</li>';
 							}

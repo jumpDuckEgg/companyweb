@@ -75,7 +75,7 @@
 
 		<!--banner-->
 		<section class="banner">
-			<img src="images/aboutbanner.jpg" alt="" class="bannerImg"/>
+			<img src="images/aboutbanner.jpg" alt="" class="bannerImg" />
 		</section>
 
 		<!--内页面包屑-->
@@ -95,7 +95,7 @@
 			</div>
 			<div class="about">
 				<div class="container">
-					
+
 				</div>
 			</div>
 		</div>
@@ -209,6 +209,7 @@
 	<!--Include Js-->
 	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript">
+		$('.loadingBox').show();
 		var SERVERIMGURL = 'http://182.61.47.252:9856/gc/page/file/get?id='
 		$(function () {
 
@@ -229,7 +230,7 @@
 					// logo
 					$('.logoImg').attr('src', SERVERIMGURL + conpanyInfo.logo);
 					// 专题图片
-					$('.bannerImg').attr('src', SERVERIMGURL + about.pictureId);
+					// $('.bannerImg').attr('src', SERVERIMGURL + about.pictureId);
 					// 关于我们的内容
 					$('.about .container').html(about.description)
 					// 产品类型
@@ -275,7 +276,7 @@
 						}
 					}
 
-
+					$('.loadingBox').hide();
 				} else {
 					alert("获取失败");
 				}

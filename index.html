@@ -27,6 +27,9 @@
 <body>
 
 	<div>
+		<div class="loadingBox">
+			<img src="images/loading.svg" alt="">
+		</div>
 		<!--header-->
 		<header class="header">
 			<section class="container">
@@ -126,7 +129,7 @@
 		<div class="footer-logo">
 			<div class="container">
 				<a href="index.html">
-					<img src="images/logo.png" alt="" class="logoImg"/>
+					<img src="images/logo.png" alt="" class="logoImg" />
 				</a>
 				<span>电话：
 					<b class="telphone">
@@ -230,6 +233,7 @@
 	<!--slick-->
 	<script src="js/slick.min.js" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript">
+		$('.loadingBox').show();
 		var SERVERIMGURL = 'http://182.61.47.252:9856/gc/page/file/get?id=';
 		var PRODUCTIONINFO = 'pro_show.html';
 		$(function () {
@@ -318,7 +322,7 @@
 							for (var pictureIndex = 0; pictureIndex < itemData.pictureList.length; pictureIndex++) {
 								templateData += '<div class="col-md-3">' +
 									'<div class="pic">' +
-									'<a href="' + (PRODUCTIONINFO + '?type=' + itemData.pictureList[pictureIndex].type + '&subType=' + itemData.pictureList[pictureIndex].subType+ '&id=' + itemData.pictureList[pictureIndex].id) + '">' +
+									'<a href="' + (PRODUCTIONINFO + '?type=' + itemData.pictureList[pictureIndex].type + '&subType=' + itemData.pictureList[pictureIndex].subType + '&id=' + itemData.pictureList[pictureIndex].id) + '">' +
 									'<img class="vcenter productionImg" src="' + (SERVERIMGURL + itemData.pictureList[pictureIndex].picturePath) + '" alt="" />' +
 									'</a>' +
 									'</div>' +
@@ -375,7 +379,7 @@
 
 						]
 					})
-
+					$('.loadingBox').hide();
 
 				} else {
 					alert("获取失败");

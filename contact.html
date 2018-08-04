@@ -275,6 +275,7 @@
 	<!--Include Js-->
 	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript">
+		$('.loadingBox').show();
 		var SERVERIMGURL = 'http://182.61.47.252:9856/gc/page/file/get?id=';
 		var MESSAGEURL = 'http://182.61.47.252:9856/gc/page/message_info/create'
 		var conpanyInfo = '';
@@ -297,7 +298,7 @@
 					// logo
 					$('.logoImg').attr('src', SERVERIMGURL + conpanyInfo.logo);
 					// 专题图片
-					$('.bannerImg').attr('src', SERVERIMGURL + conpanyInfo.pictureId);
+					// $('.bannerImg').attr('src', SERVERIMGURL + conpanyInfo.pictureId);
 					// 联系我们的内容
 					$('.contacttxt').html(conpanyInfo.description);
 					// 联系我们电话
@@ -446,7 +447,7 @@
 					map.addControl(top_left_navigation);
 					/*map.addControl(top_right_navigation);  */
 
-
+					$('.loadingBox').hide();
 				} else {
 					alert("获取失败");
 				}

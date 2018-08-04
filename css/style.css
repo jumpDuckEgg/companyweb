@@ -1731,4 +1731,21 @@ img {
   width: 156px;
   height: 85px;
 }
+.loadingBox{
+  position: absolute;
+  background:rgba(0, 0, 0, 0.4);
+  /* text-align: center; */
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: none;
+}
+.loadingBox img{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%)
+}
 /*# sourceMappingURL=style.css.map */

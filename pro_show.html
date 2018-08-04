@@ -233,6 +233,7 @@
 	<!--Include Js-->
 	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript">
+		$('.loadingBox').show();
 		var SERVERIMGURL = 'http://182.61.47.252:9856/gc/page/file/get?id=';
 		var PRODUCTIONINFO = 'http://182.61.47.252:9856/gc/page/item_info/findById?id=';
 		var PRODUCTIONLIST = 'http://182.61.47.252:9856/gc/page/item_info/findPage?';
@@ -388,6 +389,7 @@
 							getProductionInfo()
 						}
 					}
+					$('.loadingBox').hide();
 				} else {
 					alert("获取失败");
 				}
