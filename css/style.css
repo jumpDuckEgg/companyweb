@@ -89,6 +89,7 @@ img {
   max-width: 1600px;
   margin: 0 auto;
   text-align: center;
+  position: relative;
 }
 .banner .slick-dots .slick-active button {
   background: #e75826;
@@ -447,7 +448,7 @@ img {
 }
 .footernav dl {
   float: left;
-  width: 33%;
+  width: 25%;
   border-left: 1px solid #dfdfdf;
   min-height: 200px;
   padding: 30px 0 0 28px;
@@ -1719,6 +1720,7 @@ img {
 }
 .bannerImg{
   height: 140px;
+  width: 100%;
 }
 .productionType{
   cursor: pointer;
@@ -1747,5 +1749,18 @@ img {
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%)
+}
+.qrcode{
+  width: 64%;
+  margin-left: 10%;
+  margin-bottom: 20px;
+}
+.bannerContent{
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  font-size: 30px;
+  color:white;
+  transform: translate(-50%);
 }
 /*# sourceMappingURL=style.css.map */

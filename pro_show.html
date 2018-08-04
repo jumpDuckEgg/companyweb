@@ -76,6 +76,7 @@
 		<!--banner-->
 		<section class="banner">
 			<img src="images/probanner.jpg" alt="" />
+			<div class="bannerContent">产品中心</div>
 		</section>
 
 		<!--内页面包屑-->
@@ -171,6 +172,14 @@
 						<a href="contact.html#message">在线留言</a>
 					</dd>
 				</dl>
+				<dl>
+						<dt>
+							<a href="">微信二维码</a>
+						</dt>
+						<dd>
+							<img src="images/qrcode.png" alt="" class="qrcode">
+						</dd>
+					</dl>
 			</div>
 		</div>
 
@@ -256,6 +265,8 @@
 					$('.telphone').text(conpanyInfo.contactPhone);
 					// 公司名字
 					$('.conpanyName').text(conpanyInfo.name);
+					// 公司二维码
+					$('.qrcode').attr('src',SERVERIMGURL+conpanyInfo.contactWechatPath)
 					// logo
 					$('.logoImg').attr('src', SERVERIMGURL + conpanyInfo.logo);
 					// 专题图片
