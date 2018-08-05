@@ -170,7 +170,7 @@
 				</dl>
 				<dl>
 					<dt>
-						<a href="">微信二维码</a>
+						<a href="">客服二维码</a>
 					</dt>
 					<dd>
 						<img src="images/qrcode.png" alt="" class="qrcode">
@@ -193,12 +193,6 @@
 					</div>
 				</div>
 				<img src="images/yu.png" alt="" />
-				<div class="ferweima">
-					<img src="images/fewm.jpg" alt="" />
-					<div class="ewmwrap pic slideDown">
-						<img class="vcenter" src="images/erweima.jpg" alt="" />
-					</div>
-				</div>
 			</div>
 		</div>
 		<!--移动端  Mmenu-->
@@ -236,17 +230,18 @@
 	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
 
 
-
-
+	<script src="js/lazyload.js"></script>
 	<!--slick-->
 	<script src="js/slick.min.js" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript">
+		var SERVER = 'http://182.61.47.252:9856/';
+		var lazyImg = 'images/404.gif';
 		$('.loadingBox').show();
-		var SERVERIMGURL = 'http://182.61.47.252:9856/gc/page/file/get?id=';
+		var SERVERIMGURL = SERVER + 'gc/page/file/get?id=';
 		var PRODUCTIONINFO = 'pro_show.html';
 		$(function () {
 
-			$.get('http://182.61.47.252:9856/gc/page/conpany_info/findIndex?sliderSize=3&dicInfoItemInfoSize=100', function (res) {
+			$.get(SERVER + 'gc/page/conpany_info/findIndex?sliderSize=3&dicInfoItemInfoSize=100', function (res) {
 				if (res.success) {
 					var about = res.result.about;
 					var itemInfoList = res.result.ItemInfoList;
@@ -261,7 +256,7 @@
 					// 公司名字
 					$('.conpanyName').text(conpanyInfo.name);
 					// 公司二维码
-					$('.qrcode').attr('src',SERVERIMGURL+conpanyInfo.contactWechatPath)
+					$('.qrcode').attr('src', SERVERIMGURL + conpanyInfo.contactWechatPath)
 					// logo
 					$('.logoImg').attr('src', SERVERIMGURL + conpanyInfo.logo);
 					// 轮播图
@@ -270,7 +265,7 @@
 					for (var i = 0; i < sliders.length; i++) {
 						slidersData += '<div>' +
 							'<a href="#">' +
-							'<img src="' + SERVERIMGURL + sliders[0].picturePath + '" alt="" class="sliderImg" />' +
+							'<img src="' + lazyImg + '"  data-src="' + SERVERIMGURL + sliders[0].picturePath + '" alt="" class="sliderImg" />' +
 							'</a>' +
 							'</div>';
 					}
@@ -281,6 +276,8 @@
 						arrows: false,
 						autoplaySpeed: 3000,
 					});
+					// 懒加载
+					lazyload(document.querySelectorAll(".sliderImg"));
 					// 产品类型
 					for (var index = 0; index < itemInfoList.length; index++) {
 						// 产品中心
@@ -333,7 +330,7 @@
 								templateData += '<div class="col-md-3">' +
 									'<div class="pic">' +
 									'<a href="' + (PRODUCTIONINFO + '?type=' + itemData.pictureList[pictureIndex].type + '&subType=' + itemData.pictureList[pictureIndex].subType + '&id=' + itemData.pictureList[pictureIndex].id) + '">' +
-									'<img class="vcenter productionImg" src="' + (SERVERIMGURL + itemData.pictureList[pictureIndex].picturePath) + '" alt="" />' +
+									'<img class="vcenter productionImg" src="' + lazyImg + '" data-src="' + (SERVERIMGURL + itemData.pictureList[pictureIndex].picturePath) + '" alt="" />' +
 									'</a>' +
 									'</div>' +
 									'<a class="inpca" href="pro_show.html">' + itemData.pictureList[pictureIndex].title + '</a>' +
@@ -341,7 +338,8 @@
 							}
 							templateData += '</div></div></div>';
 							$('.itemList').append(templateData);
-
+							// 懒加载
+							lazyload(document.querySelectorAll(".productionImg"));
 
 							// 不是产品中心
 						} else {
@@ -354,7 +352,7 @@
 								templateData += '<div class="col-md-3">' +
 									'<div class="pic">' +
 									'<a href="javascript:void(0)">' +
-									'<img class="vcenter productionImg" src="' + (SERVERIMGURL + itemData.pictureList[pictureIndex].picturePath) + '" alt="" />' +
+									'<img class="vcenter productionImg" src="' + lazyImg + '" data-src="' + (SERVERIMGURL + itemData.pictureList[pictureIndex].picturePath) + '" alt="" />' +
 									'</a>' +
 									'</div>' +
 									'<a class="inpca" href="pro_show.html">' + itemData.pictureList[pictureIndex].title + '</a>' +
@@ -362,6 +360,8 @@
 							}
 							templateData += '</div></div></div>';
 							$('.itemList').append(templateData);
+							// 懒加载
+							lazyload(document.querySelectorAll(".productionImg"));
 						}
 
 					};

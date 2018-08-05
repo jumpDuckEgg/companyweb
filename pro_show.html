@@ -173,13 +173,13 @@
 					</dd>
 				</dl>
 				<dl>
-						<dt>
-							<a href="">微信二维码</a>
-						</dt>
-						<dd>
-							<img src="images/qrcode.png" alt="" class="qrcode">
-						</dd>
-					</dl>
+					<dt>
+						<a href="">客服二维码</a>
+					</dt>
+					<dd>
+						<img src="images/qrcode.png" alt="" class="qrcode">
+					</dd>
+				</dl>
 			</div>
 		</div>
 
@@ -197,12 +197,6 @@
 					</div>
 				</div>
 				<img src="images/yu.png" alt="" />
-				<div class="ferweima">
-					<img src="images/fewm.jpg" alt="" />
-					<div class="ewmwrap pic slideDown">
-						<img class="vcenter" src="images/erweima.jpg" alt="" />
-					</div>
-				</div>
 			</div>
 		</div>
 		<!--移动端  Mmenu-->
@@ -241,17 +235,20 @@
 
 	<!--Include Js-->
 	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/lazyload.js"></script>
 	<script type="text/javascript">
+		var SERVER = 'http://182.61.47.252:9856/';
+		var lazyImg = 'images/404.gif';
 		$('.loadingBox').show();
-		var SERVERIMGURL = 'http://182.61.47.252:9856/gc/page/file/get?id=';
-		var PRODUCTIONINFO = 'http://182.61.47.252:9856/gc/page/item_info/findById?id=';
-		var PRODUCTIONLIST = 'http://182.61.47.252:9856/gc/page/item_info/findPage?';
+		var SERVERIMGURL = SERVER + 'gc/page/file/get?id=';
+		var PRODUCTIONINFO = SERVER + 'gc/page/item_info/findById?id=';
+		var PRODUCTIONLIST = SERVER + 'gc/page/item_info/findPage?';
 		var type = 0;
 		var subType = 0;
 		var id = 0;
 		$(function () {
 
-			$.get('http://182.61.47.252:9856/gc/page/conpany_info/findIndex?sliderSize=3&dicInfoItemInfoSize=100', function (res) {
+			$.get(SERVER + 'gc/page/conpany_info/findIndex?sliderSize=3&dicInfoItemInfoSize=100', function (res) {
 				if (res.success) {
 					var about = res.result.about;
 					var itemInfoList = res.result.ItemInfoList;
@@ -266,7 +263,7 @@
 					// 公司名字
 					$('.conpanyName').text(conpanyInfo.name);
 					// 公司二维码
-					$('.qrcode').attr('src',SERVERIMGURL+conpanyInfo.contactWechatPath)
+					$('.qrcode').attr('src', SERVERIMGURL + conpanyInfo.contactWechatPath)
 					// logo
 					$('.logoImg').attr('src', SERVERIMGURL + conpanyInfo.logo);
 					// 专题图片
@@ -419,7 +416,7 @@
 						itemListData += '<li>' +
 							'<div class="pic">' +
 							'<a href="pro_show.html?type=' + records[itemIndex].type + '&subType=' + records[itemIndex].subType + '&id=' + records[itemIndex].id + '">' +
-							'<img class="vcenter itemImg" src="' + (SERVERIMGURL + records[itemIndex].picturePath) + '" alt="" />' +
+							'<img class="vcenter itemImg" src="' + lazyImg + '" data-src="' + (SERVERIMGURL + records[itemIndex].picturePath) + '" alt="" />' +
 							'</a>' +
 							'</div>' +
 							'<a href="pro_show.html?type=' + records[itemIndex].type + '&subType=' + records[itemIndex].subType + '&id=' + records[itemIndex].id + '" class="protita">' +
@@ -428,7 +425,8 @@
 							'</li>';
 					}
 					$('.productionItem').html(itemListData);
-
+					// 懒加载
+					lazyload(document.querySelectorAll(".itemImg"));
 				}
 			});
 

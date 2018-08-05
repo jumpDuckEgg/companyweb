@@ -1763,4 +1763,8 @@ img {
   color:white;
   transform: translate(-50%);
 }
+.paginationjs-pages{
+  margin-left: 50%;
+  transform: translateX(-50%)
+}
 /*# sourceMappingURL=style.css.map */
