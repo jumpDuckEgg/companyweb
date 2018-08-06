@@ -4,9 +4,9 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<title>唯星集团</title>
-	<meta name="keywords" content="唯星集团">
-	<meta name="description" content="唯星集团">
+	<title>企业名字</title>
+	<meta name="keywords" content="企业名字">
+	<meta name="description" content="企业名字">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<link rel="shortcut icon" href="favicon.ico">
 
@@ -34,7 +34,7 @@
 			<div class="logo">
 				<div class="container clearfix">
 					<a href="index.html" class="pull-left logoa">
-						<img src="images/logo.png" alt="" class="logoImg" />
+						<img src="" alt="" class="logoImg" />
 					</a>
 					<div class="search pull-right">
 						<img class="searbtn" src="images/sear.png" alt="" />
@@ -53,7 +53,7 @@
 						<a href="index.html">首页</a>
 					</li>
 					<li>
-						<a href="about.html">关于我们</a>
+						<a href="about.html active">关于我们</a>
 					</li>
 					<li class="productionMenu">
 						<a href="pro.html">产品中心</a>
@@ -75,7 +75,7 @@
 
 		<!--banner-->
 		<section class="banner">
-			<img src="images/probanner.jpg" alt="" />
+			<img src="images/probanner.jpg" alt="" class="bannerImg" />
 			<div class="bannerContent">产品中心</div>
 		</section>
 
@@ -133,7 +133,7 @@
 		<div class="footer-logo">
 			<div class="container">
 				<a href="index.html">
-					<img src="images/logo.png" alt="" class="logoImg" />
+					<img src="" alt="" class="logoImg" />
 				</a>
 				<span>电话：
 					<b class="telphone">
@@ -238,11 +238,12 @@
 	<script src="js/lazyload.js"></script>
 	<script type="text/javascript">
 		var SERVER = 'http://182.61.47.252:9856/';
-		var lazyImg = 'images/404.gif';
+		var lazyImg = 'images/blank.gif';
 		$('.loadingBox').show();
 		var SERVERIMGURL = SERVER + 'gc/page/file/get?id=';
 		var PRODUCTIONINFO = SERVER + 'gc/page/item_info/findById?id=';
 		var PRODUCTIONLIST = SERVER + 'gc/page/item_info/findPage?';
+		var INFOIMGURL = SERVER + 'gc/img/';
 		var type = 0;
 		var subType = 0;
 		var id = 0;
@@ -416,7 +417,7 @@
 						itemListData += '<li>' +
 							'<div class="pic">' +
 							'<a href="pro_show.html?type=' + records[itemIndex].type + '&subType=' + records[itemIndex].subType + '&id=' + records[itemIndex].id + '">' +
-							'<img class="vcenter itemImg" src="' + lazyImg + '" data-src="' + (SERVERIMGURL + records[itemIndex].picturePath) + '" alt="" />' +
+							'<img class="vcenter itemImg" src="' + lazyImg + '" data-src="' + (INFOIMGURL + records[itemIndex].picturePath) + '" alt="" />' +
 							'</a>' +
 							'</div>' +
 							'<a href="pro_show.html?type=' + records[itemIndex].type + '&subType=' + records[itemIndex].subType + '&id=' + records[itemIndex].id + '" class="protita">' +

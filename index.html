@@ -4,9 +4,9 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<title>唯星集团</title>
-	<meta name="keywords" content="唯星集团">
-	<meta name="description" content="唯星集团">
+	<title>企业名字</title>
+	<meta name="keywords" content="企业名字">
+	<meta name="description" content="企业名字">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<link rel="shortcut icon" href="favicon.ico">
 
@@ -38,7 +38,7 @@
 			<div class="logo">
 				<div class="container clearfix">
 					<a href="index.html" class="pull-left logoa">
-						<img src="images/logo.png" alt="" class="logoImg" />
+						<img src="" alt="" class="logoImg" />
 					</a>
 					<div class="search pull-right">
 						<img class="searbtn" src="images/sear.png" alt="" />
@@ -129,7 +129,7 @@
 		<div class="footer-logo">
 			<div class="container">
 				<a href="index.html">
-					<img src="images/logo.png" alt="" class="logoImg" />
+					<img src="" alt="" class="logoImg" />
 				</a>
 				<span>电话：
 					<b class="telphone">
@@ -235,9 +235,10 @@
 	<script src="js/slick.min.js" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript">
 		var SERVER = 'http://182.61.47.252:9856/';
-		var lazyImg = 'images/404.gif';
+		var lazyImg = 'images/blank.gif';
 		$('.loadingBox').show();
 		var SERVERIMGURL = SERVER + 'gc/page/file/get?id=';
+		var INFOIMGURL = SERVER + 'gc/img/';
 		var PRODUCTIONINFO = 'pro_show.html';
 		$(function () {
 
@@ -265,7 +266,7 @@
 					for (var i = 0; i < sliders.length; i++) {
 						slidersData += '<div>' +
 							'<a href="#">' +
-							'<img src="' + lazyImg + '"  data-src="' + SERVERIMGURL + sliders[0].picturePath + '" alt="" class="sliderImg" />' +
+							'<img src="' + lazyImg + '"  data-src="' + INFOIMGURL + sliders[0].picturePath + '" alt="" class="sliderImg" />' +
 							'</a>' +
 							'</div>';
 					}
@@ -330,7 +331,7 @@
 								templateData += '<div class="col-md-3">' +
 									'<div class="pic">' +
 									'<a href="' + (PRODUCTIONINFO + '?type=' + itemData.pictureList[pictureIndex].type + '&subType=' + itemData.pictureList[pictureIndex].subType + '&id=' + itemData.pictureList[pictureIndex].id) + '">' +
-									'<img class="vcenter productionImg" src="' + lazyImg + '" data-src="' + (SERVERIMGURL + itemData.pictureList[pictureIndex].picturePath) + '" alt="" />' +
+									'<img class="vcenter productionImg" src="' + lazyImg + '" data-src="' + (INFOIMGURL + itemData.pictureList[pictureIndex].picturePath) + '" alt="" />' +
 									'</a>' +
 									'</div>' +
 									'<a class="inpca" href="pro_show.html">' + itemData.pictureList[pictureIndex].title + '</a>' +
@@ -352,7 +353,7 @@
 								templateData += '<div class="col-md-3">' +
 									'<div class="pic">' +
 									'<a href="javascript:void(0)">' +
-									'<img class="vcenter productionImg" src="' + lazyImg + '" data-src="' + (SERVERIMGURL + itemData.pictureList[pictureIndex].picturePath) + '" alt="" />' +
+									'<img class="vcenter productionImg" src="' + lazyImg + '" data-src="' + (INFOIMGURL + itemData.pictureList[pictureIndex].picturePath) + '" alt="" />' +
 									'</a>' +
 									'</div>' +
 									'<a class="inpca" href="pro_show.html">' + itemData.pictureList[pictureIndex].title + '</a>' +
@@ -408,6 +409,7 @@
 	</script>
 
 	<!--<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>-->
+	<script> var _hmt = _hmt || []; (function() { var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?36d5332f50d8b791f5fddda6947cf38a"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
 
 </body>
 

@@ -1719,7 +1719,7 @@ img {
   width:100%;
 }
 .bannerImg{
-  height: 140px;
+  height: 160px;
   width: 100%;
 }
 .productionType{
@@ -1729,10 +1729,10 @@ img {
   width: 241px;
   height: 132px;
 }
-.itemImg{
+/* .itemImg{
   width: 156px;
   height: 85px;
-}
+} */
 .loadingBox{
   position: absolute;
   background:rgba(0, 0, 0, 0.4);
