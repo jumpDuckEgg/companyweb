@@ -242,7 +242,7 @@
 		var PRODUCTIONINFO = 'pro_show.html';
 		$(function () {
 
-			$.get(SERVER + 'gc/page/conpany_info/findIndex?sliderSize=3&dicInfoItemInfoSize=100', function (res) {
+			$.get(SERVER + 'gc/page/conpany_info/findIndex?sliderSize=4&dicInfoItemInfoSize=100', function (res) {
 				if (res.success) {
 					var about = res.result.about;
 					var itemInfoList = res.result.ItemInfoList;
@@ -266,7 +266,7 @@
 					for (var i = 0; i < sliders.length; i++) {
 						slidersData += '<div>' +
 							'<a href="#">' +
-							'<img src="' + lazyImg + '"  data-src="' + INFOIMGURL + sliders[0].picturePath + '" alt="" class="sliderImg" />' +
+							'<img src="' + lazyImg + '"  data-src="' + INFOIMGURL + sliders[i].picturePath + '" alt="" class="sliderImg" />' +
 							'</a>' +
 							'</div>';
 					}
