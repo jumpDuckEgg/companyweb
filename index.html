@@ -267,19 +267,20 @@
 					for (var i = 0; i < sliders.length; i++) {
 						slidersData += '<div>' +
 							'<a href="#">' +
-							'<img src="' + INFOIMGMINURL + sliders[i].picturePath + '"  data-src="' + INFOIMGURL + sliders[i].picturePath + '" alt="" class="sliderImg" />' +
+							'<img src="' + INFOIMGURL + sliders[i].picturePath + '"  data-src="' + INFOIMGURL + sliders[i].picturePath + '" alt="" class="sliderImg" />' +
 							'</a>' +
 							'</div>';
 					}
 					$('.banner').html(slidersData);
+					// 懒加载
+					// lazyload(document.querySelectorAll(".sliderImg"));
 					$('.banner').slick({
 						dots: true,
 						autoplay: true,
 						arrows: false,
 						autoplaySpeed: 3000,
 					});
-					// 懒加载
-					lazyload(document.querySelectorAll(".sliderImg"));
+					
 					// 产品类型
 					for (var index = 0; index < itemInfoList.length; index++) {
 						// 产品中心
