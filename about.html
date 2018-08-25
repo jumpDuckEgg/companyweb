@@ -213,6 +213,7 @@
 	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript">
 		var SERVER = 'http://182.61.47.252:9856/';
+		var INFOIMGURL = SERVER + 'gc/img/';
 		$('.loadingBox').show();
 		var SERVERIMGURL = SERVER + 'gc/page/file/get?id='
 		$(function () {
@@ -236,7 +237,7 @@
 					// logo
 					$('.logoImg').attr('src', SERVERIMGURL + conpanyInfo.logo);
 					// 专题图片
-					$('.bannerImg').attr('src', SERVERIMGURL + about.pictureId);
+					$('.bannerImg').attr('src', INFOIMGURL + about.picturePath);
 					// 关于我们的内容
 					$('.about .container').html(about.description)
 					// 产品类型

@@ -281,7 +281,8 @@
 		var SERVER = 'http://182.61.47.252:9856/';
 		$('.loadingBox').show();
 		var SERVERIMGURL = SERVER + 'gc/page/file/get?id=';
-		var MESSAGEURL = SERVER + 'gc/page/message_info/create'
+		var MESSAGEURL = SERVER + 'gc/page/message_info/create';
+		var INFOIMGURL = SERVER + 'gc/img/';
 		var conpanyInfo = '';
 		$(function () {
 
@@ -304,7 +305,7 @@
 					// logo
 					$('.logoImg').attr('src', SERVERIMGURL + conpanyInfo.logo);
 					// 专题图片
-					$('.bannerImg').attr('src', SERVERIMGURL + conpanyInfo.pictureId);
+					$('.bannerImg').attr('src', INFOIMGURL + conpanyInfo.picturePath);
 					// 联系我们的内容
 					$('.contacttxt').html(conpanyInfo.description);
 					// 联系我们电话
